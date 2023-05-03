@@ -47,6 +47,7 @@ int main()
 	write_sortFile(filenameNow, rand_arr, size, 0);
 	//-----------------------------------------------------------------
 	RunCopy();
+	finalRunCopy();
 	//----------------------------------------------------------------
 	auto finish = chrono::high_resolution_clock::now(); // сохраняем время конца работы алгоритма
 	chrono::duration<double> elapsed = finish - start;

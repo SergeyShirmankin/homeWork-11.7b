@@ -88,3 +88,10 @@ void RunCopy()
 		"number6.txt", "number7.txt", "number8.txt",
 		"number9.txt", "outNumber9.txt",1);
 }
+void finalRunCopy()
+{
+	copy_10_Files("outNumber0.txt", "outNumber1.txt", "outNumber2.txt",// сливаем файлы
+		"outNumber3.txt", "outNumber4.txt", "outNumber5.txt",
+		"outNumber6.txt", "outNumber7.txt", "outNumber8.txt",
+		"outNumber8.txt", "out.txt", 1);
+}
