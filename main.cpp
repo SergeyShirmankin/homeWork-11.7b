@@ -16,21 +16,21 @@ int main()
 	string filenameNow = "sort";//выходные  файлы для карманной сортировки 10 шт: sort1.txt..
 	string fileNumer = "number";//выходные файлы после разрядной сортировки.
 	const int size = 2000;
-	const int cycle = 10000;
+	const int cycle = 100;
 	int* rand_arr = new int[size];
 	srand(time(nullptr)); // используем текущее время, чтобы сгенерировать рандомные значения
 	int lef_border = 1;
 	int range_len = 100; // правая граница = range_len + left_border
-	for (int i = 0; i < size; i++)
-		rand_arr[i] = lef_border + rand() % range_len; // генерируем число в указанном диапазоне и записываем в массив
+//	for (int i = 0; i < size; i++)
+//		rand_arr[i] = lef_border + rand() % range_len; // генерируем число в указанном диапазоне и записываем в массив
 	auto start = chrono::high_resolution_clock::now();
-	write_arr(filename, rand_arr, size, 1); // записываем массив в файл и создаем файл
+//	write_arr(filename, rand_arr, size, 1); // записываем массив в файл и создаем файл
 //-------------------------------------------------------------------------------
-	//for (int j = 0; j < cycle; j++) {
-	//	for (long i = 0; i < size; i++)
-	//		rand_arr[i] = lef_border + rand() % range_len; // генерируем число в указанном диапазоне и записываем в массив
-	//	write_arr(filename, rand_arr, size, 0); // записываем массив в файл и добавляем в файл
-	//}
+	for (int j = 0; j < cycle; j++) {
+		for (long i = 0; i < size; i++)
+			rand_arr[i] = lef_border + rand() % range_len; // генерируем число в указанном диапазоне и записываем в массив
+		write_arr(filename, rand_arr, size, 1); // записываем массив в файл и добавляем в файл
+	}
 //===============================================================================
 	int* array_from_file = nullptr;
 	int n = 100;
